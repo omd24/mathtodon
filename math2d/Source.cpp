@@ -9,7 +9,8 @@
 
 #include "dynarray.h"
 
-int main () {
+static void
+test_dynarray () {
     double * a = NULL;
     DYN_ARRAY_INIT(double, a);
 
@@ -70,6 +71,12 @@ int main () {
     ::printf("the capcaity of the array = %I64u\n", DYN_ARRAY_CAPACITY(a));
 
     DYN_ARRAY_DEINIT(a);
+}
+
+int
+main () {
+    test_dynarray();
+
     return (0);
 }
 

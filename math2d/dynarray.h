@@ -6,7 +6,6 @@
    #Description: C-style dynamic array. This is purely experimental. Use std::vector if you fancy. #
    #Notice: (C) Copyright 2021 by Omid. All Rights Reserved. #
    =========================================================== */
-
 #pragma once
 
 #include "common.h"
