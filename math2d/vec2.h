@@ -26,8 +26,7 @@ Vec2f_Normalized (Vec2f const * vec) {
 }
 Vec2f
 Vec2f_Rotated (Vec2f const * vec, float alpha) {
-    return {
-        (vec->x * cosf(alpha) - vec->y * sinf(alpha)),
-        (vec->x * sinf(alpha) + vec->y * cosf(alpha))
-    };
+    float x = (vec->x * cosf(alpha) - vec->y * sinf(alpha));
+    float y = (vec->x * sinf(alpha) + vec->y * cosf(alpha));
+    return {x, y};
 }
