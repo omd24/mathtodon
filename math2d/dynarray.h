@@ -17,6 +17,7 @@
 // 4. The C28182 warning is disabled
 
 #pragma warning (disable: 28182)
+#pragma warning (default: 28182)
 
 #define DYN_ARRAY_INIT(T, arr)                                      \
     do {                                                            \
@@ -37,6 +38,16 @@
 #define DYN_ARRAY_LENGTH(arr)       (*((size_t *)(arr)-2))
 #define DYN_ARRAY_CAPACITY(arr)     (*((size_t *)(arr)-1))
 
+#define DYN_ARRAY_EXPAND(T, arr, size)      \
+    do {    \
+        SIMPLE_ASSERT(arr, "invalid array");    \
+        SIMPLE_ASSERT(size > 0, "invalid expansion size");   \
+        size_t * arr_ptr = ((size_t *)(arr)-2);     \
+        arr_ptr[1] += size;   \
+        arr_ptr = (size_t *)::realloc(arr_ptr, 2 * sizeof(size_t) + arr_ptr[1] * sizeof(*arr));    \
+        (arr) = (T *)&arr_ptr[2];    \
+    } while (0)
+
 #define DYN_ARRAY_PUSHBACK(T, arr, value)      \
     do {    \
         SIMPLE_ASSERT(arr, "invalid array");    \
@@ -51,4 +62,4 @@
         arr[arr_ptr[0]] = (value);      \
     } while (0)
 
-#pragma warning (default: 28182)
+

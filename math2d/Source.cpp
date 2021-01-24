@@ -31,6 +31,12 @@ test_dynarray () {
     DYN_ARRAY_PUSHBACK(double, a, 25);
     ::printf("the size of the array = %I64u\n", DYN_ARRAY_LENGTH(a));
     ::printf("the capcaity of the array = %I64u\n", DYN_ARRAY_CAPACITY(a));
+    DYN_ARRAY_EXPAND(double, a, 10);
+    DYN_ARRAY_PUSHBACK(double, a, 25);
+    DYN_ARRAY_PUSHBACK(double, a, 25);
+    DYN_ARRAY_PUSHBACK(double, a, 25);
+    ::printf("the size of the array = %I64u\n", DYN_ARRAY_LENGTH(a));
+    ::printf("the capcaity of the array = %I64u\n", DYN_ARRAY_CAPACITY(a));
     DYN_ARRAY_DEINIT(a);
 }
 static void
