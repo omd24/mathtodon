@@ -45,15 +45,27 @@ test_vec2 () {
     Vec2f v = {};
     v.x = 2.0f;
     v.y = 1.0f;
+    ::printf("v = [%.2f, %.2f]\n", v.x, v.y);
     ::printf("Length of the vector is %.2f\n", Vec2f_Magnitude(&v));
     Vec2f nv = Vec2f_Normalized(&v);
     ::printf("Normalized vector is [%.2f, %.2f]\n", nv.x, nv.y);
-    Vec2f rv = Vec2f_Rotated(&v, PI/4);
+    Vec2f rv = Vec2f_Rotated(&v, PI / 4);
     ::printf("Rotated vector by PI/4 is [%.2f, %.2f]\n", rv.x, rv.y);
+
+    Vec2f v1 = v;
+    Vec2f v2 = v1 + v;
+    ::printf("v1 = [%.2f, %.2f]\n", v1.x, v1.y);
+    ::printf("v2 = [%.2f, %.2f]\n", v2.x, v2.y);
+
+    v1 += v2;
+    v2 -= 2.5 * v;
+    ::printf("v1 = [%.2f, %.2f]\n", v1.E[0], v1.E[1]);
+    ::printf("v2 = [%.2f, %.2f]\n", v2.E[0], v2.E[1]);
+
 }
 int
 main () {
-    test_dynarray();
+    //test_dynarray();
     test_vec2();
     return (0);
 }
