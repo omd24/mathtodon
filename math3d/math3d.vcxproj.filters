@@ -15,22 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="dynarray.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="vec2.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="mat3.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Source.cpp">
+    <ClCompile Include="source.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="vec3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

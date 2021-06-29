@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{b79aac16-04d5-411a-b5da-953c2228a2a2}</ProjectGuid>
-    <RootNamespace>math2d</RootNamespace>
+    <ProjectGuid>{5bcd5056-a107-41c0-b37a-26404875967e}</ProjectGuid>
+    <RootNamespace>math3d</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -78,9 +78,11 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <OutDir>./</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <OutDir>./</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -139,13 +141,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="common.h" />
-    <ClInclude Include="dynarray.h" />
-    <ClInclude Include="mat3.h" />
-    <ClInclude Include="vec2.h" />
+    <ClCompile Include="source.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source.cpp" />
+    <ClInclude Include="vec3.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
